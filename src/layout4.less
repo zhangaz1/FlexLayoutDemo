@@ -1,0 +1,72 @@
+@headerHeight: 100px;
+@footerHeight: 50px;
+@leftWidth: 600px;
+@contentWidth: 300px;
+@rightWidth: 150px;
+@minWidth: 1200px;
+@minHeight: 800px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // overflow: hidden;
+    min-width: @minWidth;
+    min-height: @minHeight;
+}
+
+.layout {
+    [class*='-container'] {
+        border: solid 1px;
+        padding: 0.2em;
+
+        > [class*='content'] {
+            border: solid 1px;
+            padding: 0.8em;
+        }
+    }
+
+    .main-wrap-container {
+        display: flex;
+        flex-direction: column;
+        min-width: @minWidth;
+        min-height: @minHeight;
+
+        .content.header {
+            height: @headerHeight;
+        }
+
+        .main-container {
+            flex: 1;
+        }
+
+        .content.footer {
+            height: @footerHeight;
+        }
+    }
+
+    .content.main {
+        display: flex;
+        flex-direction: row;
+
+        > [class*='-container'] {
+            flex: 1;
+        }
+
+        .left-container {
+            min-width: @leftWidth;
+            flex-grow: 0;
+        }
+
+        .content-container {
+            min-width: @contentWidth;
+        }
+
+        .right-container {
+            min-width: @rightWidth;
+            flex-grow: 0;
+        }
+    }
+}
