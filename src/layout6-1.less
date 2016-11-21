@@ -1,23 +1,11 @@
-// .border() {
-// 	border: solid 1px;
-// }
-// .fill() {
-// 	position: absolute;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	left: 0;
-// }
-
 .flex() {
 	display: flex;
 }
 
-.auto-overflow() {
-	overflow: auto;
-}
+.layout-item() {}
 
 .float-item() {
+	.layout-item();
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -29,7 +17,7 @@
 .layout-container() {
 	.flex();
 	position: relative;
-	.auto-overflow();
+	overflow: auto;
 }
 
 .row-container {
@@ -42,7 +30,10 @@
 	flex-direction: column;
 }
 
-.layout-item() {}
+.auto-item {
+	.layout-item();
+	flex: 1 0;
+}
 
 .solid-item {
 	.layout-item();
@@ -67,9 +58,4 @@
 .left-item {
 	.float-item();
 	right: auto;
-}
-
-.auto-item {
-	.layout-item();
-	flex: 1 0;
 }
