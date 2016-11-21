@@ -1,0 +1,75 @@
+// .border() {
+// 	border: solid 1px;
+// }
+// .fill() {
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+// }
+
+.flex() {
+	display: flex;
+}
+
+.auto-overflow() {
+	overflow: auto;
+}
+
+.float-item() {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.layout-container() {
+	.flex();
+	position: relative;
+	.auto-overflow();
+}
+
+.row-container {
+	.layout-container();
+	flex-direction: row;
+}
+
+.column-container {
+	.layout-container();
+	flex-direction: column;
+}
+
+.layout-item() {}
+
+.solid-item {
+	.layout-item();
+	flex: 0 0;
+}
+
+.top-item {
+	.float-item();
+	bottom: auto;
+}
+
+.right-item {
+	.float-item();
+	left: auto;
+}
+
+.bottom-item {
+	.float-item();
+	top: auto;
+}
+
+.left-item {
+	.float-item();
+	right: auto;
+}
+
+.auto-item {
+	.layout-item();
+	flex: 1 0;
+}

@@ -70,12 +70,12 @@ body {
 	flex-direction: column;
 }
 
-.layout-item {
+.layout-item() {
 	.border();
-	.auto-overflow();
 }
 
 .solid-item {
+	.layout-item();
 	flex: 0 0;
 }
 
@@ -100,6 +100,7 @@ body {
 }
 
 .auto-item {
+	.layout-item();
 	flex: 1 0;
 }
 
