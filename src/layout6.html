@@ -10,17 +10,29 @@
 	<script type="text/javascript" src="./less.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			$('.layout-item').dblclick(function() {});
+			$('.layout-item')
+				.not('.auto-item')
+				.dblclick(function() {
+					var floatClassKey = 'floatClass';
+
+					var $this = $(this);
+					var floatClass = $this.attr(floatClassKey)
+
+					if (floatClass) {
+						$this.toggleClass('solid-item');
+						$this.toggleClass(floatClass);
+					}
+				});
 		});
 	</script>
 </head>
 
 <body class="column-container layout-container">
-	<div class="solid-item layout-item header">
+	<div class="solid-item layout-item header" floatClass="top-item">
 		header
 	</div>
 	<div class="auto-item layout-item row-container layout-container">
-		<div class="left-item layout-item left-bar">
+		<div class="solid-item layout-item left-bar" floatClass="left-item">
 			leftleftleftleftle ftleftleftleftleftleftleftleftleftleftleftleftle ftleftleftleftleftleftleftleftleftleftleftleftle ftleftleftleftleftleftleftleftleftleftleftleftle ftleftleftleftleftleftleftleftleftleftleftleftle ftleftleftleftleftleftleftleftleftleftleftleftle
 			ftleftleftleftleftleftleftleftleftleftleftleftle ftleftleftleftleftleftleftleft
 		</div>
@@ -51,11 +63,11 @@
 			contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent
 			contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent content
 		</div>
-		<div class="solid-item layout-item right-bar">
+		<div class="solid-item layout-item right-bar" floatClass="right-item">
 			rightrightri htrightrightrigh trightrig htrightrightr ightrightrigh trightright
 		</div>
 	</div>
-	<div class="solid-item layout-item footer">
+	<div class="solid-item layout-item footer" floatClass="bottom-item">
 		footer
 	</div>
 
